@@ -8,10 +8,13 @@ from apps.Users.models import User
 from apps.Authorization.auth_utils import *
 
 
+# TODO: Only admin can get list of users
+
+
 @app.route("/users", methods=["GET"])
 def get_all_users():
     users = User.query.all()
-    return jsonify(users), 200
+    return jsonify([user.serialize for user in users]), 200
 
 
 @app.route("/users", methods=["POST"])

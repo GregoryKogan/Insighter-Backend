@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
+from flask_bcrypt import Bcrypt
 from config import *
 
 
@@ -12,13 +13,14 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = JWT_ACCESS_TOKEN_EXPIRES
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = JWT_REFRESH_TOKEN_EXPIRES
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 
 from apps.Users.models import *
 
 
 db.create_all()
-if User.query.filter(User.rank == "Admin").first() is None:
+if User.query.filter_by(rank="Admin").one_or_none() is None:
     admin = User(name="Admin", password=ADMIN_PASSWORD, rank="Admin")
     db.session.add(admin)
 db.session.commit()

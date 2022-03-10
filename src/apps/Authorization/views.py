@@ -17,9 +17,10 @@ def login():
 
     name, password = user_credentials["name"], user_credentials["password"]
 
-    user = User.query.filter(name == name).first()
+    user = User.query.filter_by(name=name).first()
     if user is None:
         return jsonify({"msg": "this user does not exist"}), 400
+
     if not user.check_password(password):
         return jsonify({"msg": "Wrong password"}), 400
 
