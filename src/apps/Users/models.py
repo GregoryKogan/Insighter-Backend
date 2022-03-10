@@ -2,12 +2,9 @@ from app import db, bcrypt
 import datetime
 
 
-# TODO: username validation max length 80 characters
-
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(45), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
     rank = db.Column(db.String(20), default="User")
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
