@@ -1,6 +1,7 @@
-from flask_restful import Resource
+from app import app
+from flask import jsonify
 
 
-class PingView(Resource):
-    def get(self):
-        return {"message": "pong"}
+@app.route("/ping", methods=["GET"])
+def ping_view():
+    return jsonify({"message": "pong"}), 200
