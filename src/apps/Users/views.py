@@ -8,11 +8,12 @@ from apps.Users.models import User
 from apps.Authorization.auth_utils import *
 
 
-# TODO: Only admin can get list of users
-
-
 @app.route("/users", methods=["GET"])
+@jwt_required()
 def get_all_users():
+    if current_user.rank != "Admin":
+        return jsonify({"msg": "Not allowed"}), 403
+
     users = User.query.all()
     return jsonify([user.serialize for user in users]), 200
 
