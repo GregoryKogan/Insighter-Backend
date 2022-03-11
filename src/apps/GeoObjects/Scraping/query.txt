@@ -1,0 +1,10 @@
+[out:json][timeout:100];
+area(3602555133)->.searchArea;
+(
+  node["wikipedia"](if: t["wikidata"])(area.searchArea);
+  way["wikipedia"](if: t["wikidata"])(area.searchArea);
+  relation["wikipedia"](if: t["wikidata"])(area.searchArea);
+);
+out center;
+>;
+out skel qt;
