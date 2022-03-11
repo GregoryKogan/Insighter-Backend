@@ -26,9 +26,9 @@ if User.query.filter_by(rank="Admin").one_or_none() is None:
 db.session.commit()
 
 
-from apps.Ping.views import *
-from apps.Authorization.views import *
-from apps.Users.views import *
+from apps.Ping.views import *  # noqa
+from apps.Authorization.views import *  # noqa
+from apps.Users.views import *  # noqa
 
 
 if __name__ == "__main__":

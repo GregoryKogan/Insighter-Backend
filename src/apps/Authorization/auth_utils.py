@@ -34,7 +34,7 @@ def get_user_credentials(request) -> dict:
 def validate_username(username: str) -> (bool, str):
     if len(username) < 5:
         return False, "username is too short"
-    
+
     if len(username) > 40:
         return False, "username is too long"
 
