@@ -1,5 +1,7 @@
-from app import db, bcrypt
+from app import db
 import datetime
+import bcrypt
+from config import PASSWORD_PEPPER
 
 
 class User(db.Model):
@@ -28,7 +30,11 @@ class User(db.Model):
     # TODO: Figure out proper password salting and peppering
     @password.setter
     def password(self, password):
-        self.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
+        self.password_hash = bcrypt.hashpw(
+            str(password + PASSWORD_PEPPER).encode("utf8"), bcrypt.gensalt()
+        )
 
     def check_password(self, password):
-        return bcrypt.check_password_hash(self.password_hash, password)
+        return bcrypt.checkpw(
+            str(password + PASSWORD_PEPPER).encode("utf8"), self.password_hash
+        )

@@ -6,9 +6,6 @@ from apps.GeoObjects.models import GeoObject
 from app import db
 
 
-# TODO: Strange number of new objects
-
-
 OVERPASS_URL = "http://overpass-api.de/api/interpreter"
 WIKIDATA_IMAGE_URL = "https://www.wikidata.org/w/api.php?format=json&action=wbgetclaims&property=P18&entity="
 WIKIMEDIA_URL = "https://commons.wikimedia.org/w/thumb.php?width=500&f="
