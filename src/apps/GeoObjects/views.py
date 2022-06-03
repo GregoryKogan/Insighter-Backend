@@ -121,3 +121,11 @@ def delete_all():
     db.session.commit()
 
     return jsonify({"msg": f"{num_rows_deleted} GeoObjects successfully deleted"}), 200
+
+
+@app.route("/geoObjects/<id>", methods=["GET"])
+def fetchOne(id):
+    geo_object = GeoObject.query.get(id)
+    if geo_object is None:
+        return jsonify({"error": f"GeoObject with id={id} does not exist"}), 404
+    return jsonify(geo_object.serialize), 200
