@@ -17,6 +17,7 @@ bcrypt = Bcrypt(app)
 
 
 from apps.Users.models import *
+from apps.GeoObjects.models import *
 
 
 db.create_all()
@@ -26,9 +27,10 @@ if User.query.filter_by(rank="Admin").one_or_none() is None:
 db.session.commit()
 
 
-from apps.Ping.views import *  # noqa
-from apps.Authorization.views import *  # noqa
-from apps.Users.views import *  # noqa
+from apps.Ping.views import *
+from apps.Authorization.views import *
+from apps.Users.views import *
+from apps.GeoObjects.views import *
 
 
 if __name__ == "__main__":

@@ -14,12 +14,18 @@ class User(db.Model):
 
     @property
     def serialize(self):
-        return {"id": self.id, "name": self.name, "rank": self.rank}
+        return {
+            "id": self.id,
+            "name": self.name,
+            "rank": self.rank,
+            "created_at": self.created_at.isoformat(),
+        }
 
     @property
     def password(self):
         raise AttributeError("password not readable")
 
+    # TODO: Figure out proper password salting and peppering
     @password.setter
     def password(self, password):
         self.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")

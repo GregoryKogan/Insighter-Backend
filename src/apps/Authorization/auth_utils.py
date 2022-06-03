@@ -38,8 +38,7 @@ def validate_username(username: str) -> (bool, str):
     if len(username) > 40:
         return False, "username is too long"
 
-    exists = User.query.filter_by(name=username).one_or_none()
-    if exists:
+    if User.query.filter_by(name=username).one_or_none():
         return False, "username already taken"
 
     return True, None
