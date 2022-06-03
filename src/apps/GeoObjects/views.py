@@ -129,3 +129,17 @@ def fetchOne(id):
     if geo_object is None:
         return jsonify({"error": f"GeoObject with id={id} does not exist"}), 404
     return jsonify(geo_object.serialize), 200
+
+
+@app.route("/geoObjects/syncUser", methods=["GET"])
+def syncUser():
+    geo_objects = GeoObject.query.all()
+    short_objects = [
+        {
+            "id": geo_object.id,
+            "lat": geo_object.latitude,
+            "lon": geo_object.longitude,
+        }
+        for geo_object in geo_objects
+    ]
+    return jsonify({"total": len(short_objects), "GeoObjects": short_objects}), 200
