@@ -19,14 +19,14 @@ def login():
 
     user = User.query.filter_by(name=name).first()
     if user is None:
-        return jsonify({"msg": "this user does not exist"}), 400
+        return jsonify({"msg": "This user does not exist"}), 400
 
     if not user.check_password(password):
         return jsonify({"msg": "Wrong password"}), 400
 
     access_token = create_access_token(identity=user)
     refresh_token = create_refresh_token(identity=user)
-    return jsonify(access_token=access_token, refresh_token=refresh_token)
+    return jsonify(access_token=access_token, refresh_token=refresh_token), 200
 
 
 @app.route("/auth/refresh", methods=["POST"])
