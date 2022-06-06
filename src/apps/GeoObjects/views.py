@@ -43,7 +43,7 @@ def last_sync():
     if last_sync_timestamp is None:
         return jsonify({"msg": "There aren't any GeoObjects"})
 
-    time_delta = datetime.datetime.utcnow() - last_sync_timestamp
+    time_delta = datetime.datetime.now(datetime.timezone.utc) - last_sync_timestamp
     return jsonify(
         {
             "LastSync": last_sync_timestamp.isoformat(),
