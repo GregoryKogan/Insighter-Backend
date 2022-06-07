@@ -42,3 +42,23 @@ def validate_username(username: str) -> (bool, str):
         return False, "Username already taken"
 
     return True, None
+
+
+def validate_password(password: str) -> (bool, str):
+    if len(password) < 8:
+        return False, "Password must be at least 8 characters long"
+
+    if len(password) > 40:
+        return False, "Password is too long"
+
+    if (
+        not any(c.isdigit() for c in password)
+        or not any(c.islower() for c in password)
+        or not any(c.isupper() for c in password)
+    ):
+        return (
+            False,
+            "Password must contain digits, lower and capital case letters",
+        )
+
+    return True, None

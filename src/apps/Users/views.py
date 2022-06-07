@@ -30,6 +30,10 @@ def create_user():
     if not is_name_valid:
         return jsonify({"msg": err}), 400
 
+    is_password_valid, err = validate_password(password)
+    if not is_password_valid:
+        return jsonify({"msg": err}), 400
+
     new_user = User(name=name, password=password)
     db.session.add(new_user)
     db.session.commit()
