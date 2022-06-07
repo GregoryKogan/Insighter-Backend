@@ -33,12 +33,12 @@ def get_user_credentials(request) -> dict:
 
 def validate_username(username: str) -> (bool, str):
     if len(username) < 5:
-        return False, "username is too short"
+        return False, "Username is too short"
 
     if len(username) > 40:
-        return False, "username is too long"
+        return False, "Username is too long"
 
     if User.query.filter_by(name=username).one_or_none():
-        return False, "username already taken"
+        return False, "Username already taken"
 
     return True, None
