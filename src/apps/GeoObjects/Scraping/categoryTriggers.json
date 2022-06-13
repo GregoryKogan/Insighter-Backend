@@ -1,0 +1,175 @@
+{
+    "ban": [
+        "company",
+        "studio",
+        "mass_media",
+        "office",
+        "person",
+        "boundary",
+        "route"
+    ],
+    "building": [
+        "building",
+        "apartments",
+        "дом"
+    ],
+    "railway": [
+        "railway",
+        "train",
+        "платформа",
+        "subway",
+        "вокзал",
+        "железная дорога",
+        "station",
+        "метро",
+        "метрополитен",
+        "depot"
+    ],
+    "theatre": [
+        "театр",
+        "theatre"
+    ],
+    "monument": [
+        "monument",
+        "obelisk",
+        "обелиск",
+        "монумент",
+        "памятник",
+        "memorial",
+        "мемориал",
+        "statue",
+        "статуя",
+        "fountain",
+        "фонтан"
+    ],
+    "museum": [
+        "museum",
+        "музей",
+        "галерея",
+        "gallery",
+        "arts_centre"
+    ],
+    "healthcare": [
+        "healthcare",
+        "hospital"
+    ],
+    "government_agency": [
+        "government",
+        "register_office",
+        "diplomatic",
+        "embassy",
+        "посольство",
+        "military"
+    ],
+    "area": [
+        "suburb",
+        "район",
+        "neighbourhood",
+        "village",
+        "place"
+    ],
+    "restaurant": [
+        "cafe",
+        "restaurant",
+        "кафе",
+        "ресторан",
+        "food"
+    ],
+    "education": [
+        "university",
+        "institution",
+        "университет",
+        "институт",
+        "школа",
+        "school",
+        "library",
+        "библиотека",
+        "училище",
+        "college",
+        "академия"
+    ],
+    "science": [
+        "research"
+    ],
+    "industrial": [
+        "industrial",
+        "factory",
+        "commercial",
+        "фабрика",
+        "завод",
+        "electricity",
+        "hot_water",
+        "power"
+    ],
+    "cemetery": [
+        "cemetery",
+        "кладбище"
+    ],
+    "park": [
+        "park",
+        "garden",
+        "парк"
+    ],
+    "highway": [
+        "highway",
+        "шоссе"
+    ],
+    "square": [
+        "square",
+        "площадь"
+    ],
+    "stadium": [
+        "stadium",
+        "стадион",
+        "sports_centre",
+        "soccer",
+        "sport"
+    ],
+    "water": [
+        "waterway",
+        "river",
+        "lake",
+        "река",
+        "озеро",
+        "pond",
+        "пруд",
+        "залив",
+        "водохранилище"
+    ],
+    "religious": [
+        "religious",
+        "place_of_worship",
+        "храм",
+        "церковь",
+        "church",
+        "religion"
+    ],
+    "bridge": [
+        "bridge",
+        "мост"
+    ],
+    "prison": [
+        "prison",
+        "тюрьма",
+        "сизо"
+    ],
+    "street": [
+        "street",
+        "улица",
+        "переулок",
+        "проезд",
+        "аллея",
+        "бульвар",
+        "набережная",
+        "проспект",
+        "двор"
+    ],
+    "attraction": [
+        "attraction",
+        "historic",
+        "viewpoint",
+        "shop",
+        "manor",
+        "tourism"
+    ]
+}
