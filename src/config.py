@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 
-SQLALCHEMY_DATABASE_URI = "sqlite:///mw.db"
+SQLALCHEMY_DATABASE_URI = "sqlite:///insighter.db"
 ADMIN_PASSWORD = "ADMIN"
 PASSWORD_PEPPER = "PEPPER"
 JWT_SECRET_KEY = "TESTING"
